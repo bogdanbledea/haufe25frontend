@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "./components/ui/input";
 import { useAppContext } from "./AppContext";
 import Widget1 from "./Widget1";
-import Widget2 from "./Widget2";
+import Widget2 from "./Widget2.tsx";
 import Widget3 from "./Widget3";
 import Widget4 from "./Widget4";
 

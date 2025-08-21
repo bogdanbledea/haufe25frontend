@@ -82,7 +82,7 @@ const CountryDropdownComponent = (
       }
     } else {
       // Reset selected country if defaultValue is undefined or null
-      setSelectedCountry(undefined);
+      // setSelectedCountry(undefined);
     }
   }, [defaultValue, options]);
 

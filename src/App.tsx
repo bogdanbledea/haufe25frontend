@@ -15,6 +15,7 @@ function App() {
     results,
     setSelectedCity,
     searchCities,
+    setSelectedCountry,
     loading,
     error,
   } = useAppContext();
@@ -25,8 +26,9 @@ function App() {
       <div className="mb-4">
         <CountryDropdown
           placeholder="Select country"
-          defaultValue="USA"
-          onChange={() => {}}
+          onChange={(e) => {
+            setSelectedCountry(e.alpha2);
+          }}
         />
       </div>
 

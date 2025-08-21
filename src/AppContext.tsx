@@ -19,6 +19,8 @@ interface AppContextType {
   results: CityResult[];
   selectedCity: CityResult | null;
   setSelectedCity: React.Dispatch<React.SetStateAction<CityResult | null>>;
+  selectedCountry: string | null;
+  setSelectedCountry: React.Dispatch<React.SetStateAction<string | null>>;
   loading: boolean;
   error: string | null;
   searchCities: () => Promise<void>;
@@ -44,6 +46,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<CityResult[]>([]);
   const [selectedCity, setSelectedCity] = useState<CityResult | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -56,7 +59,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
       const res = await fetch(
         `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(
           query
-        )}`
+        )}${selectedCountry ? `&countryCode=${selectedCountry}` : ""}`
       );
       const data = await res.json();
 
@@ -90,6 +93,8 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         results,
         selectedCity,
         setSelectedCity,
+        selectedCountry,
+        setSelectedCountry,
         loading,
         error,
         searchCities,

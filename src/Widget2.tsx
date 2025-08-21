@@ -7,7 +7,6 @@ const Widget2 = () => {
         <CardTitle>3-Day Forecast Chart</CardTitle>
       </CardHeader>
       <CardContent className="flex items-center justify-center h-full">
-        <p className="text-gray-500">Team 2: Start here</p>
       </CardContent>
     </Card>
   );

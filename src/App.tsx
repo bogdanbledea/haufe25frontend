@@ -1,55 +1,70 @@
-import "./App.css";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "./components/ui/input";
+import { useAppContext } from "./AppContext";
+import Widget1 from "./Widget1";
+import Widget2 from "./Widget2";
+import Widget3 from "./Widget3";
+import Widget4 from "./Widget4";
 
 function App() {
+  const {
+    query,
+    setQuery,
+    results,
+    setSelectedCity,
+    searchCities,
+    loading,
+    error,
+  } = useAppContext();
+
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
-      {/* Header */}
-      <header className="w-full max-w-4xl flex justify-between items-center py-4">
-        <h1 className="text-2xl font-bold text-gray-800">Student App</h1>
-        <nav>
-          <Button variant="outline" size="sm">
-            Login
-          </Button>
-        </nav>
-      </header>
-
-      {/* Welcome Section */}
-      <section className="mt-12 text-center">
-        <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-          Welcome to the Summer Practice App!
-        </h2>
-        <p className="text-gray-600 max-w-xl mx-auto">
-          Track your todos, participate in polls, and practice coding in a fun
-          interactive way.
-        </p>
-      </section>
-
-      {/* Todos Card */}
-      <section className="mt-10 w-full max-w-md">
-        <Card>
+    <div className="flex flex-col h-screen bg-gray-50 p-4">
+      {/* Search Section */}
+      <div className="">
+        <Card className="w-full">
           <CardHeader>
-            <CardTitle>Todos</CardTitle>
+            <CardTitle>1. Search & Select City</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-2">
-              <li className="flex justify-between items-center">
-                <span>Learn React</span>
-                <Button variant="ghost" size="sm">
-                  Done
-                </Button>
-              </li>
-              <li className="flex justify-between items-center">
-                <span>Build practice app</span>
-                <Button variant="ghost" size="sm">
-                  Done
-                </Button>
-              </li>
-            </ul>
+            <div className="flex gap-2">
+              <Input
+                placeholder="Enter city name..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && searchCities()}
+              />
+              <Button onClick={searchCities} disabled={loading}>
+                {loading ? "Loading..." : "Search"}
+              </Button>
+            </div>
+            {error && <p className="text-red-500 mt-2">{error}</p>}
+            {results.length > 0 && (
+              <ul className="mt-4 space-y-2">
+                {results.map((city) => (
+                  <li key={city.id}>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start"
+                      onClick={() => setSelectedCity(city)}
+                    >
+                      {city.name}, {city.country}
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </CardContent>
         </Card>
-      </section>
+      </div>
+
+      {/* 4 Widgets Grid */}
+      <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-4 mt-8">
+        <Widget1 />
+        <Widget2 />
+        <Widget3 />
+        <Widget4 />
+      </div>
     </div>
   );
 }

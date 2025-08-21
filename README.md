@@ -1,69 +1,30 @@
-# React + TypeScript + Vite
+# React Frontend App for Summer Practice 2025 @ Haufe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the boilerplate for our final frontend app.
 
-Currently, two official plugins are available:
+There will be 4 teams, for 4 widgets. Each of you(as a team) will implement the widget according to the requirements below:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Team 1 – Current Weather Overview
 
-## Expanding the ESLint configuration
+- Show current temperature and a weather emoji (☀️, 🌧️, ❄️).
+- Show basic info: wind speed or feels-like temperature (optional).
+- Keep styling simple (1 card, text + emoji).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Team 2 – 3-Day Forecast Chart
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Display a small chart or list of temperature highs/lows for the next 3 days.
+- No need for fancy animations, just text or a simple bar chart.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Team 3 - Hourly Weather Timeline
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Show next 6–12 hours of weather in a list or horizontal scroll.
+- Each entry: time + emoji + temperature.
+- Keep UI simple (no extra libraries required).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Team 4 – City Info
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Show selected city info: country, latitude, longitude.
+- Optional: country flag emoji.
+- Focus on layout and using data from context, not fetching extra APIs.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Happy coding!

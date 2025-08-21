@@ -7,6 +7,7 @@ interface CityResult {
   id: number;
   name: string;
   country: string;
+  country_code: string;
   latitude: number;
   longitude: number;
 }
@@ -69,6 +70,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
             id: idx,
             name: r.name,
             country: r.country,
+            country_code: r.country_code,
             latitude: r.latitude,
             longitude: r.longitude,
           }))

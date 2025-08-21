@@ -16,8 +16,12 @@
     "@tailwindcss/vite": "^4.1.12",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+<<<<<<< HEAD
     "cmdk": "^1.1.1",
     "country-data-list": "^1.5.4",
+=======
+    "country-flag-icons": "^1.5.19",
+>>>>>>> 8b369ec6a4c38cfbb9daf39c3485f982ff33d986
     "lucide-react": "^0.540.0",
     "react": "^19.1.1",
     "react-circle-flags": "^0.0.23",

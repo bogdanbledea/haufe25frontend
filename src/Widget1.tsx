@@ -8,13 +8,91 @@ const getWeatherInfo = (weatherCode: number) => {
     [key: number]: { icon: string; description: string; color: string };
   } = {
     0: { icon: "☀️", description: "Clear sky", color: "text-yellow-500" },
-    1: {
-      icon: "🌤️",
-      description: "Mainly clear",
-      color: "text-yellow-400",
-    },
+    1: { icon: "🌤️", description: "Mainly clear", color: "text-yellow-400" },
     2: { icon: "⛅", description: "Partly cloudy", color: "text-blue-400" },
     3: { icon: "☁️", description: "Overcast", color: "text-gray-500" },
+
+    45: { icon: "🌫️", description: "Fog", color: "text-gray-400" },
+    48: {
+      icon: "🌫️",
+      description: "Depositing rime fog",
+      color: "text-gray-400",
+    },
+
+    51: { icon: "🌦️", description: "Light drizzle", color: "text-blue-300" },
+    53: { icon: "🌦️", description: "Moderate drizzle", color: "text-blue-400" },
+    55: { icon: "🌧️", description: "Dense drizzle", color: "text-blue-500" },
+
+    56: {
+      icon: "🌧️❄️",
+      description: "Light freezing drizzle",
+      color: "text-cyan-400",
+    },
+    57: {
+      icon: "🌧️❄️",
+      description: "Dense freezing drizzle",
+      color: "text-cyan-500",
+    },
+
+    61: { icon: "🌦️", description: "Slight rain", color: "text-blue-400" },
+    63: { icon: "🌧️", description: "Moderate rain", color: "text-blue-500" },
+    65: { icon: "🌧️", description: "Heavy rain", color: "text-blue-600" },
+
+    66: {
+      icon: "🌨️",
+      description: "Light freezing rain",
+      color: "text-cyan-400",
+    },
+    67: {
+      icon: "🌨️",
+      description: "Heavy freezing rain",
+      color: "text-cyan-600",
+    },
+
+    71: { icon: "🌨️", description: "Slight snow fall", color: "text-white" },
+    73: {
+      icon: "🌨️",
+      description: "Moderate snow fall",
+      color: "text-gray-200",
+    },
+    75: { icon: "❄️", description: "Heavy snow fall", color: "text-gray-300" },
+
+    77: { icon: "❄️", description: "Snow grains", color: "text-gray-200" },
+
+    80: {
+      icon: "🌧️",
+      description: "Slight rain showers",
+      color: "text-blue-400",
+    },
+    81: {
+      icon: "🌧️",
+      description: "Moderate rain showers",
+      color: "text-blue-500",
+    },
+    82: {
+      icon: "🌧️",
+      description: "Violent rain showers",
+      color: "text-blue-700",
+    },
+
+    85: { icon: "🌨️", description: "Slight snow showers", color: "text-white" },
+    86: {
+      icon: "❄️",
+      description: "Heavy snow showers",
+      color: "text-gray-300",
+    },
+
+    95: { icon: "⛈️", description: "Thunderstorm", color: "text-purple-600" },
+    96: {
+      icon: "⛈️🌨️",
+      description: "Thunderstorm with slight hail",
+      color: "text-purple-700",
+    },
+    99: {
+      icon: "⛈️❄️",
+      description: "Thunderstorm with heavy hail",
+      color: "text-purple-800",
+    },
   };
 
   return (

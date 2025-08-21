@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, type ReactNode } from "react";
+import * as React from "react";
 
 // --------------------
 // Types

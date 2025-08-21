@@ -6,6 +6,7 @@ import Widget1 from "./Widget1";
 import Widget2 from "./Widget2.tsx";
 import Widget3 from "./Widget3";
 import Widget4 from "./Widget4";
+import { CountryDropdown } from "@/components/ui/country-dropdown";
 
 function App() {
   const {
@@ -21,13 +22,21 @@ function App() {
   return (
     <div className="flex flex-col h-screen bg-gray-50 p-4">
       {/* Search Section */}
+      <div className="mb-4">
+        <CountryDropdown
+          placeholder="Select country"
+          defaultValue="USA"
+          onChange={() => {}}
+        />
+      </div>
+
       <div className="">
         <Card className="w-full">
           <CardHeader>
             <CardTitle>1. Search & Select City</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex gap-2">
+            <div className="flex flex-col gap-2 space-y-2">
               <Input
                 placeholder="Enter city name..."
                 value={query}

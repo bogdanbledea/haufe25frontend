@@ -20,12 +20,6 @@ import {
 } from "recharts";
 import { Sun, CloudSun, Cloud, CloudRain, CloudLightning, Snowflake, CloudFog } from "lucide-react";
 
-/**
- * Single chart + day switcher
- * - 3-day forecast, one chart visible at a time
- * - Tabs to switch day, °C/°F toggle, min/max band line
- */
-
 type Unit = "c" | "f";
 
 interface Hourly { time: string[]; temperature_2m: number[]; }
@@ -193,7 +187,7 @@ export default function Widget2() {
                         </Tabs>
 
                         <Separator />
-                        <p className="text-xs text-muted-foreground">Sfat: poți schimba ziua din tab-urile de mai sus. Temperaturi afișate în {unitLabel}.</p>
+                        <p className="text-xs text-muted-foreground">You can see the forecast for each day in tabs above {unitLabel}.</p>
                     </>
                 )}
             </CardContent>

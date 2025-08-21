@@ -11,12 +11,16 @@ interface CityResult {
   longitude: number;
 }
 
+
 interface AppContextType {
   query: string;
   setQuery: React.Dispatch<React.SetStateAction<string>>;
+//  country:string;
   results: CityResult[];
   selectedCity: CityResult | null;
-  setSelectedCity: React.Dispatch<React.SetStateAction<CityResult | null>>;
+  setSelectedCity: React.Dispatch<React.SetStateAction<CityResult| null>>;
+   // selectedCountry: CityResult | null;
+//  setSelectedCountry: React.Dispatch<React.SetStateAction<CountryResult | null>>;
   loading: boolean;
   error: string | null;
   searchCities: () => Promise<void>;
@@ -44,6 +48,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const [selectedCity, setSelectedCity] = useState<CityResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+//  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
 
   const searchCities = async () => {
     if (!query) return;
@@ -87,9 +92,13 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         results,
         selectedCity,
         setSelectedCity,
+    //    selectedCountry,
+//  setSelectedCountry,
+
         loading,
         error,
         searchCities,
+
       }}
     >
       {children}
